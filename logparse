@@ -1,0 +1,345 @@
+#!/usr/bin/env python3
+import re
+import sys
+import json
+import argparse
+from datetime import datetime
+from collections import defaultdict
+
+# Configuration
+BRUTE_FORCE_THRESHOLD = 5
+BRUTE_FORCE_WINDOW = 60  # seconds
+UNUSUAL_HOUR_START = 2
+UNUSUAL_HOUR_END = 5
+
+# Log patterns
+PATTERNS = {
+    'timestamp': r'^(\w{3}\s+\d+\s+\d+:\d+:\d+)',
+    'failed_password': r'Failed password for (?:invalid user )?(\S+) from (\S+) port (\d+)',
+    'accepted': r'Accepted (?:password|publickey) for (\S+) from (\S+) port (\d+)',
+    'invalid_user': r'Invalid user (\S+) from (\S+) port (\d+)',
+}
+
+# Colors
+RED, GREEN, YELLOW, BLUE, MAGENTA, CYAN, BOLD, END = (
+    '\033[91m', '\033[92m', '\033[93m', '\033[94m',
+    '\033[95m', '\033[96m', '\033[1m', '\033[0m'
+)
+
+
+def parse_line(line):
+    entry = {'raw': line, 'type': 'unknown'}
+
+    # timestamp
+    ts_match = re.search(PATTERNS['timestamp'], line)
+    if ts_match:
+        try:
+            year = datetime.now().year
+            entry['timestamp'] = datetime.strptime(f"{year} {ts_match.group(1)}", "%Y %b %d %H:%M:%S")
+        except ValueError:
+            entry['timestamp'] = None
+
+    # failed password
+    match = re.search(PATTERNS['failed_password'], line)
+    if match:
+        entry['type'] = 'failed'
+        entry['user'] = match.group(1)
+        entry['ip'] = match.group(2)
+        entry['port'] = int(match.group(3))
+        entry['invalid'] = 'invalid user' in line.lower()
+        return entry
+
+    # successful login
+    match = re.search(PATTERNS['accepted'], line)
+    if match:
+        entry['type'] = 'success'
+        entry['user'] = match.group(1)
+        entry['ip'] = match.group(2)
+        entry['port'] = int(match.group(3))
+        entry['auth'] = 'publickey' if 'publickey' in line.lower() else 'password'
+        return entry
+
+    # invalid user
+    match = re.search(PATTERNS['invalid_user'], line)
+    if match:
+        entry['type'] = 'failed'
+        entry['user'] = match.group(1)
+        entry['ip'] = match.group(2)
+        entry['port'] = int(match.group(3))
+        entry['invalid'] = True
+        return entry
+
+    return entry
+
+
+def parse_log_file(path):
+    with open(path, 'r') as f:
+        lines = f.readlines()
+
+    if not lines:
+        raise ValueError("Log file is empty")
+
+    entries = []
+    for line in lines:
+        line = line.strip()
+        if line:
+            entry = parse_line(line)
+            if entry['type'] != 'unknown':
+                entries.append(entry)
+
+    return entries
+
+
+def detect_brute_force(entries):
+    attacks = []
+    failed = [e for e in entries if e['type'] == 'failed']
+
+    # group by IP
+    by_ip = defaultdict(list)
+    for e in failed:
+        if e.get('ip'):
+            by_ip[e['ip']].append(e)
+
+    for ip, attempts in by_ip.items():
+        sorted_attempts = sorted(attempts, key=lambda x: x.get('timestamp') or datetime.min)
+
+        for i, attempt in enumerate(sorted_attempts):
+            if not attempt.get('timestamp'):
+                continue
+
+            window = [attempt]
+            for j in range(i + 1, len(sorted_attempts)):
+                next_att = sorted_attempts[j]
+                if not next_att.get('timestamp'):
+                    continue
+
+                diff = (next_att['timestamp'] - attempt['timestamp']).total_seconds()
+                if diff <= BRUTE_FORCE_WINDOW:
+                    window.append(next_att)
+                else:
+                    break
+
+            if len(window) >= BRUTE_FORCE_THRESHOLD:
+                # avoid duplicates
+                already = any(a['ip'] == ip and a['first'] == window[0]['timestamp'] for a in attacks)
+                if not already:
+                    users = list(set(a.get('user') for a in window if a.get('user')))
+                    time_span = int((window[-1]['timestamp'] - window[0]['timestamp']).total_seconds())
+                    attacks.append({
+                        'ip': ip,
+                        'attempts': len(window),
+                        'window': time_span,
+                        'first': window[0]['timestamp'],
+                        'last': window[-1]['timestamp'],
+                        'users': users
+                    })
+
+    return attacks
+
+
+def detect_unusual_logins(entries):
+    unusual = []
+    for e in entries:
+        if e['type'] == 'success' and e.get('timestamp'):
+            hour = e['timestamp'].hour
+            if UNUSUAL_HOUR_START <= hour <= UNUSUAL_HOUR_END:
+                unusual.append(e)
+    return unusual
+
+
+def analyze(entries):
+    failed = [e for e in entries if e['type'] == 'failed']
+    success = [e for e in entries if e['type'] == 'success']
+
+    # IP stats
+    ip_stats = defaultdict(lambda: {'failed': 0, 'success': 0, 'users': set()})
+    for e in entries:
+        if e.get('ip'):
+            ip_stats[e['ip']]['failed' if e['type'] == 'failed' else 'success'] += 1
+            if e.get('user'):
+                ip_stats[e['ip']]['users'].add(e['user'])
+
+    # User stats
+    user_stats = defaultdict(lambda: {'failed': 0, 'success': 0, 'invalid': False})
+    for e in entries:
+        if e.get('user'):
+            user_stats[e['user']]['failed' if e['type'] == 'failed' else 'success'] += 1
+            if e.get('invalid'):
+                user_stats[e['user']]['invalid'] = True
+
+    return {
+        'total': len(entries),
+        'failed': len(failed),
+        'success': len(success),
+        'unique_ips': len(ip_stats),
+        'unique_users': len(user_stats),
+        'entries': entries,
+        'ip_stats': {k: {**v, 'users': list(v['users'])} for k, v in ip_stats.items()},
+        'user_stats': dict(user_stats),
+        'brute_force': detect_brute_force(entries),
+        'unusual_logins': detect_unusual_logins(entries),
+    }
+
+
+def print_report(result, use_colors=True):
+    # disable colors if requested
+    r, g, y, b, m, c, bold, end = (RED, GREEN, YELLOW, BLUE, MAGENTA, CYAN, BOLD, END) if use_colors else ('',)*8
+
+    sep = "=" * 60
+    thin = "-" * 60
+
+    print(f"\n{bold}{c}{sep}{end}")
+    print(f"{bold}{c}{'SSH LOG SECURITY ANALYSIS':^60}{end}")
+    print(f"{bold}{c}{sep}{end}\n")
+
+    # summary
+    print(f"{bold}SUMMARY{end}")
+    print(thin)
+    print(f"Total entries:         {result['total']}")
+    print(f"Failed attempts:       {r}{result['failed']}{end}")
+    print(f"Successful logins:     {g}{result['success']}{end}")
+    print(f"Unique IPs:            {result['unique_ips']}")
+    print(f"Brute force attacks:   {r}{len(result['brute_force'])}{end}")
+    print()
+
+    # brute force attacks
+    if result['brute_force']:
+        print(f"{bold}{r}BRUTE FORCE ATTACKS{end}")
+        print(thin)
+        for bf in result['brute_force']:
+            sev = "CRITICAL" if bf['attempts'] >= 10 else "HIGH"
+            sev_color = r if bf['attempts'] >= 10 else y
+            target = bf['users'][0] if len(bf['users']) == 1 else "multiple"
+            print(f"[{sev_color}{sev}{end}] {bf['ip']} - {bf['attempts']} attempts in {bf['window']}s (target: {target})")
+        print()
+
+    # unusual logins
+    if result['unusual_logins']:
+        print(f"{bold}{y}UNUSUAL HOUR LOGINS (2-5 AM){end}")
+        print(thin)
+        for e in result['unusual_logins']:
+            time = e['timestamp'].strftime("%H:%M:%S") if e.get('timestamp') else "unknown"
+            print(f"[{y}ALERT{end}] {time} - {e.get('user')}@{e.get('ip')}")
+        print()
+
+    # top attacking IPs
+    if result['ip_stats']:
+        print(f"{bold}{m}TOP ATTACKING IPS{end}")
+        print(thin)
+        sorted_ips = sorted(result['ip_stats'].items(), key=lambda x: x[1]['failed'], reverse=True)[:10]
+        for ip, stats in sorted_ips:
+            if stats['failed'] > 0:
+                print(f"  {ip:<20} {r}{stats['failed']}{end} failed")
+        print()
+
+    # targeted users
+    if result['user_stats']:
+        print(f"{bold}{b}MOST TARGETED USERS{end}")
+        print(thin)
+        sorted_users = sorted(result['user_stats'].items(), key=lambda x: x[1]['failed'], reverse=True)[:10]
+        for user, stats in sorted_users:
+            if stats['failed'] > 0:
+                invalid = f" {y}(invalid){end}" if stats['invalid'] else ""
+                print(f"  {user:<20} {stats['failed']} attempts{invalid}")
+        print()
+
+    # successful logins
+    success = [e for e in result['entries'] if e['type'] == 'success']
+    if success:
+        print(f"{bold}{g}SUCCESSFUL LOGINS{end}")
+        print(thin)
+        for e in success:
+            time = e['timestamp'].strftime("%Y-%m-%d %H:%M:%S") if e.get('timestamp') else "unknown"
+            auth = e.get('auth', 'unknown')
+            print(f"  {time} - {e.get('user')}@{e.get('ip')} ({auth})")
+        print()
+
+    # recommendations
+    print(f"{bold}{c}RECOMMENDATIONS{end}")
+    print(thin)
+    if result['brute_force']:
+        top = sorted(result['brute_force'], key=lambda x: x['attempts'], reverse=True)[:3]
+        for bf in top:
+            print(f"  - Block IP: {bf['ip']} ({bf['attempts']} failed attempts)")
+    if result['unusual_logins']:
+        print("  - Investigate logins at unusual hours")
+    print("  - Consider installing fail2ban")
+    print("  - Disable root SSH login (PermitRootLogin no)")
+    print("  - Use SSH key authentication")
+    print(f"\n{bold}{c}{sep}{end}\n")
+
+
+def generate_json(result):
+    def fmt_time(dt):
+        return dt.isoformat() if dt else None
+
+    return {
+        'summary': {
+            'total_entries': result['total'],
+            'failed_attempts': result['failed'],
+            'successful_logins': result['success'],
+            'unique_ips': result['unique_ips'],
+            'unique_users': result['unique_users'],
+            'brute_force_count': len(result['brute_force'])
+        },
+        'brute_force_attacks': [{
+            'ip': bf['ip'],
+            'attempts': bf['attempts'],
+            'time_window': bf['window'],
+            'first': fmt_time(bf['first']),
+            'last': fmt_time(bf['last']),
+            'targets': bf['users']
+        } for bf in result['brute_force']],
+        'unusual_logins': [{
+            'timestamp': fmt_time(e.get('timestamp')),
+            'user': e.get('user'),
+            'ip': e.get('ip')
+        } for e in result['unusual_logins']],
+        'top_ips': [{
+            'ip': ip,
+            'failed': stats['failed'],
+            'users': stats['users']
+        } for ip, stats in sorted(result['ip_stats'].items(), key=lambda x: x[1]['failed'], reverse=True)[:10] if stats['failed'] > 0],
+        'targeted_users': [{
+            'user': user,
+            'failed': stats['failed'],
+            'invalid': stats['invalid']
+        } for user, stats in sorted(result['user_stats'].items(), key=lambda x: x[1]['failed'], reverse=True)[:10] if stats['failed'] > 0]
+    }
+
+
+def main():
+    parser = argparse.ArgumentParser(description='SSH Log Parser - Analyze auth.log for security threats')
+    parser.add_argument('log_file', help='Path to auth.log file')
+    parser.add_argument('--json', action='store_true', help='Output as JSON')
+    parser.add_argument('-o', '--output', help='Save JSON to file')
+    parser.add_argument('--no-color', action='store_true', help='Disable colors')
+    args = parser.parse_args()
+
+    try:
+        entries = parse_log_file(args.log_file)
+        result = analyze(entries)
+
+        if args.json:
+            report = generate_json(result)
+            if args.output:
+                with open(args.output, 'w') as f:
+                    json.dump(report, f, indent=2)
+                print(f"Saved to {args.output}")
+            else:
+                print(json.dumps(report, indent=2))
+        else:
+            print_report(result, use_colors=not args.no_color)
+
+        return 0
+
+    except FileNotFoundError:
+        print(f"Error: File not found: {args.log_file}", file=sys.stderr)
+        return 1
+    except Exception as e:
+        print(f"Error: {e}", file=sys.stderr)
+        return 1
+
+
+if __name__ == '__main__':
+    sys.exit(main())

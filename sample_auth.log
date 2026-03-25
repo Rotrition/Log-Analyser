@@ -1,0 +1,279 @@
+Jan 15 06:12:01 ubuntu-server CRON[1842]: pam_unix(cron:session): session opened for user root by (uid=0)
+Jan 15 06:12:01 ubuntu-server CRON[1842]: pam_unix(cron:session): session closed for user root
+Jan 15 06:25:33 ubuntu-server sshd[2104]: Accepted publickey for admin from 10.0.0.5 port 52341 ssh2: RSA SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8
+Jan 15 06:25:33 ubuntu-server sshd[2104]: pam_unix(sshd:session): session opened for user admin by (uid=0)
+Jan 15 06:45:12 ubuntu-server sshd[2201]: Invalid user test from 185.220.101.34 port 44892
+Jan 15 06:45:12 ubuntu-server sshd[2201]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=185.220.101.34
+Jan 15 06:45:14 ubuntu-server sshd[2201]: Failed password for invalid user test from 185.220.101.34 port 44892 ssh2
+Jan 15 06:45:15 ubuntu-server sshd[2201]: Received disconnect from 185.220.101.34 port 44892:11: Bye Bye [preauth]
+Jan 15 06:45:15 ubuntu-server sshd[2201]: Disconnected from invalid user test 185.220.101.34 port 44892 [preauth]
+Jan 15 07:01:22 ubuntu-server sshd[2287]: Invalid user admin from 103.207.39.12 port 38291
+Jan 15 07:01:22 ubuntu-server sshd[2287]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=103.207.39.12
+Jan 15 07:01:24 ubuntu-server sshd[2287]: Failed password for invalid user admin from 103.207.39.12 port 38291 ssh2
+Jan 15 07:01:25 ubuntu-server sshd[2289]: Invalid user administrator from 103.207.39.12 port 38295
+Jan 15 07:01:27 ubuntu-server sshd[2289]: Failed password for invalid user administrator from 103.207.39.12 port 38295 ssh2
+Jan 15 07:01:28 ubuntu-server sshd[2291]: Invalid user root from 103.207.39.12 port 38301
+Jan 15 07:01:30 ubuntu-server sshd[2291]: Failed password for invalid user root from 103.207.39.12 port 38301 ssh2
+Jan 15 07:01:31 ubuntu-server sshd[2293]: Invalid user user from 103.207.39.12 port 38309
+Jan 15 07:01:33 ubuntu-server sshd[2293]: Failed password for invalid user user from 103.207.39.12 port 38309 ssh2
+Jan 15 07:01:34 ubuntu-server sshd[2295]: Invalid user guest from 103.207.39.12 port 38315
+Jan 15 07:01:36 ubuntu-server sshd[2295]: Failed password for invalid user guest from 103.207.39.12 port 38315 ssh2
+Jan 15 07:01:37 ubuntu-server sshd[2297]: Invalid user support from 103.207.39.12 port 38322
+Jan 15 07:01:39 ubuntu-server sshd[2297]: Failed password for invalid user support from 103.207.39.12 port 38322 ssh2
+Jan 15 07:01:40 ubuntu-server sshd[2299]: Invalid user oracle from 103.207.39.12 port 38330
+Jan 15 07:01:42 ubuntu-server sshd[2299]: Failed password for invalid user oracle from 103.207.39.12 port 38330 ssh2
+Jan 15 07:01:43 ubuntu-server sshd[2301]: Invalid user postgres from 103.207.39.12 port 38338
+Jan 15 07:01:45 ubuntu-server sshd[2301]: Failed password for invalid user postgres from 103.207.39.12 port 38338 ssh2
+Jan 15 07:01:46 ubuntu-server sshd[2303]: Invalid user mysql from 103.207.39.12 port 38345
+Jan 15 07:01:48 ubuntu-server sshd[2303]: Failed password for invalid user mysql from 103.207.39.12 port 38345 ssh2
+Jan 15 07:01:49 ubuntu-server sshd[2305]: Invalid user ubuntu from 103.207.39.12 port 38352
+Jan 15 07:01:51 ubuntu-server sshd[2305]: Failed password for invalid user ubuntu from 103.207.39.12 port 38352 ssh2
+Jan 15 07:30:11 ubuntu-server sshd[2401]: Accepted password for developer from 192.168.1.100 port 49213 ssh2
+Jan 15 07:30:11 ubuntu-server sshd[2401]: pam_unix(sshd:session): session opened for user developer by (uid=0)
+Jan 15 07:45:33 ubuntu-server sshd[2401]: pam_unix(sshd:session): session closed for user developer
+Jan 15 08:15:02 ubuntu-server sshd[2512]: Connection closed by 45.33.32.156 port 52341 [preauth]
+Jan 15 08:22:17 ubuntu-server sshd[2534]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=192.168.1.55 user=admin
+Jan 15 08:22:19 ubuntu-server sshd[2534]: Failed password for admin from 192.168.1.55 port 51223 ssh2
+Jan 15 08:22:25 ubuntu-server sshd[2534]: Failed password for admin from 192.168.1.55 port 51223 ssh2
+Jan 15 08:22:31 ubuntu-server sshd[2534]: Failed password for admin from 192.168.1.55 port 51223 ssh2
+Jan 15 08:22:33 ubuntu-server sshd[2534]: Connection closed by authenticating user admin 192.168.1.55 port 51223 [preauth]
+Jan 15 08:23:01 ubuntu-server sshd[2540]: Accepted password for admin from 192.168.1.55 port 51230 ssh2
+Jan 15 08:23:01 ubuntu-server sshd[2540]: pam_unix(sshd:session): session opened for user admin by (uid=0)
+Jan 15 09:00:01 ubuntu-server CRON[2612]: pam_unix(cron:session): session opened for user root by (uid=0)
+Jan 15 09:00:01 ubuntu-server CRON[2612]: pam_unix(cron:session): session closed for user root
+Jan 15 09:12:45 ubuntu-server sshd[2701]: Invalid user pi from 45.227.255.99 port 33821
+Jan 15 09:12:45 ubuntu-server sshd[2701]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=45.227.255.99
+Jan 15 09:12:47 ubuntu-server sshd[2701]: Failed password for invalid user pi from 45.227.255.99 port 33821 ssh2
+Jan 15 09:12:48 ubuntu-server sshd[2703]: Invalid user pi from 45.227.255.99 port 33829
+Jan 15 09:12:50 ubuntu-server sshd[2703]: Failed password for invalid user pi from 45.227.255.99 port 33829 ssh2
+Jan 15 09:12:51 ubuntu-server sshd[2705]: Invalid user pi from 45.227.255.99 port 33837
+Jan 15 09:12:53 ubuntu-server sshd[2705]: Failed password for invalid user pi from 45.227.255.99 port 33837 ssh2
+Jan 15 10:05:22 ubuntu-server sshd[2812]: Accepted publickey for deploy from 10.0.0.25 port 44521 ssh2: RSA SHA256:W6BAkPVLrDhkPvBMTkLlSWBOKpJ1lVxNEw8RqkBXrAE
+Jan 15 10:05:22 ubuntu-server sshd[2812]: pam_unix(sshd:session): session opened for user deploy by (uid=0)
+Jan 15 10:15:33 ubuntu-server sudo:   deploy : TTY=pts/0 ; PWD=/home/deploy ; USER=root ; COMMAND=/usr/bin/apt update
+Jan 15 10:15:33 ubuntu-server sudo: pam_unix(sudo:session): session opened for user root by deploy(uid=0)
+Jan 15 10:16:01 ubuntu-server sudo: pam_unix(sudo:session): session closed for user root
+Jan 15 10:45:12 ubuntu-server sshd[2812]: pam_unix(sshd:session): session closed for user deploy
+Jan 15 11:00:01 ubuntu-server CRON[2901]: pam_unix(cron:session): session opened for user root by (uid=0)
+Jan 15 11:00:01 ubuntu-server CRON[2901]: pam_unix(cron:session): session closed for user root
+Jan 15 11:23:44 ubuntu-server sshd[2945]: Invalid user nagios from 178.128.23.12 port 55123
+Jan 15 11:23:44 ubuntu-server sshd[2945]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=178.128.23.12
+Jan 15 11:23:46 ubuntu-server sshd[2945]: Failed password for invalid user nagios from 178.128.23.12 port 55123 ssh2
+Jan 15 11:45:33 ubuntu-server sshd[3012]: Connection closed by 159.89.173.104 port 41234 [preauth]
+Jan 15 12:00:01 ubuntu-server CRON[3101]: pam_unix(cron:session): session opened for user root by (uid=0)
+Jan 15 12:00:01 ubuntu-server CRON[3101]: pam_unix(cron:session): session closed for user root
+Jan 15 12:15:22 ubuntu-server sshd[3145]: Accepted password for webmaster from 192.168.1.75 port 52341 ssh2
+Jan 15 12:15:22 ubuntu-server sshd[3145]: pam_unix(sshd:session): session opened for user webmaster by (uid=0)
+Jan 15 12:30:11 ubuntu-server sshd[3145]: pam_unix(sshd:session): session closed for user webmaster
+Jan 15 13:01:11 ubuntu-server sshd[3201]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=91.240.118.172 user=root
+Jan 15 13:01:13 ubuntu-server sshd[3201]: Failed password for root from 91.240.118.172 port 44521 ssh2
+Jan 15 13:01:14 ubuntu-server sshd[3203]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=91.240.118.172 user=root
+Jan 15 13:01:16 ubuntu-server sshd[3203]: Failed password for root from 91.240.118.172 port 44529 ssh2
+Jan 15 13:01:17 ubuntu-server sshd[3205]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=91.240.118.172 user=root
+Jan 15 13:01:19 ubuntu-server sshd[3205]: Failed password for root from 91.240.118.172 port 44537 ssh2
+Jan 15 13:01:20 ubuntu-server sshd[3207]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=91.240.118.172 user=root
+Jan 15 13:01:22 ubuntu-server sshd[3207]: Failed password for root from 91.240.118.172 port 44545 ssh2
+Jan 15 13:01:23 ubuntu-server sshd[3209]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=91.240.118.172 user=root
+Jan 15 13:01:25 ubuntu-server sshd[3209]: Failed password for root from 91.240.118.172 port 44553 ssh2
+Jan 15 13:01:26 ubuntu-server sshd[3211]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=91.240.118.172 user=root
+Jan 15 13:01:28 ubuntu-server sshd[3211]: Failed password for root from 91.240.118.172 port 44561 ssh2
+Jan 15 13:01:29 ubuntu-server sshd[3213]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=91.240.118.172 user=root
+Jan 15 13:01:31 ubuntu-server sshd[3213]: Failed password for root from 91.240.118.172 port 44569 ssh2
+Jan 15 13:01:32 ubuntu-server sshd[3215]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=91.240.118.172 user=root
+Jan 15 13:01:34 ubuntu-server sshd[3215]: Failed password for root from 91.240.118.172 port 44577 ssh2
+Jan 15 13:01:35 ubuntu-server sshd[3217]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=91.240.118.172 user=root
+Jan 15 13:01:37 ubuntu-server sshd[3217]: Failed password for root from 91.240.118.172 port 44585 ssh2
+Jan 15 13:01:38 ubuntu-server sshd[3219]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=91.240.118.172 user=root
+Jan 15 13:01:40 ubuntu-server sshd[3219]: Failed password for root from 91.240.118.172 port 44593 ssh2
+Jan 15 13:01:41 ubuntu-server sshd[3221]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=91.240.118.172 user=root
+Jan 15 13:01:43 ubuntu-server sshd[3221]: Failed password for root from 91.240.118.172 port 44601 ssh2
+Jan 15 13:01:44 ubuntu-server sshd[3223]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=91.240.118.172 user=root
+Jan 15 13:01:46 ubuntu-server sshd[3223]: Failed password for root from 91.240.118.172 port 44609 ssh2
+Jan 15 13:01:47 ubuntu-server sshd[3225]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=91.240.118.172 user=root
+Jan 15 13:01:49 ubuntu-server sshd[3225]: Failed password for root from 91.240.118.172 port 44617 ssh2
+Jan 15 13:01:50 ubuntu-server sshd[3227]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=91.240.118.172 user=root
+Jan 15 13:01:52 ubuntu-server sshd[3227]: Failed password for root from 91.240.118.172 port 44625 ssh2
+Jan 15 13:01:53 ubuntu-server sshd[3229]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=91.240.118.172 user=root
+Jan 15 13:01:55 ubuntu-server sshd[3229]: Failed password for root from 91.240.118.172 port 44633 ssh2
+Jan 15 14:00:01 ubuntu-server CRON[3301]: pam_unix(cron:session): session opened for user root by (uid=0)
+Jan 15 14:00:01 ubuntu-server CRON[3301]: pam_unix(cron:session): session closed for user root
+Jan 15 14:12:33 ubuntu-server sshd[3345]: Invalid user ftpuser from 222.186.180.130 port 51234
+Jan 15 14:12:33 ubuntu-server sshd[3345]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=222.186.180.130
+Jan 15 14:12:35 ubuntu-server sshd[3345]: Failed password for invalid user ftpuser from 222.186.180.130 port 51234 ssh2
+Jan 15 14:12:36 ubuntu-server sshd[3347]: Invalid user ftp from 222.186.180.130 port 51242
+Jan 15 14:12:38 ubuntu-server sshd[3347]: Failed password for invalid user ftp from 222.186.180.130 port 51242 ssh2
+Jan 15 14:12:39 ubuntu-server sshd[3349]: Invalid user www from 222.186.180.130 port 51250
+Jan 15 14:12:41 ubuntu-server sshd[3349]: Failed password for invalid user www from 222.186.180.130 port 51250 ssh2
+Jan 15 14:12:42 ubuntu-server sshd[3351]: Invalid user www-data from 222.186.180.130 port 51258
+Jan 15 14:12:44 ubuntu-server sshd[3351]: Failed password for invalid user www-data from 222.186.180.130 port 51258 ssh2
+Jan 15 14:12:45 ubuntu-server sshd[3353]: Invalid user apache from 222.186.180.130 port 51266
+Jan 15 14:12:47 ubuntu-server sshd[3353]: Failed password for invalid user apache from 222.186.180.130 port 51266 ssh2
+Jan 15 14:12:48 ubuntu-server sshd[3355]: Invalid user nginx from 222.186.180.130 port 51274
+Jan 15 14:12:50 ubuntu-server sshd[3355]: Failed password for invalid user nginx from 222.186.180.130 port 51274 ssh2
+Jan 15 14:30:22 ubuntu-server sshd[3401]: Accepted publickey for admin from 10.0.0.5 port 52890 ssh2: RSA SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8
+Jan 15 14:30:22 ubuntu-server sshd[3401]: pam_unix(sshd:session): session opened for user admin by (uid=0)
+Jan 15 15:00:01 ubuntu-server CRON[3501]: pam_unix(cron:session): session opened for user root by (uid=0)
+Jan 15 15:00:01 ubuntu-server CRON[3501]: pam_unix(cron:session): session closed for user root
+Jan 15 15:22:11 ubuntu-server sshd[3545]: Invalid user teamspeak from 116.31.116.42 port 48921
+Jan 15 15:22:11 ubuntu-server sshd[3545]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=116.31.116.42
+Jan 15 15:22:13 ubuntu-server sshd[3545]: Failed password for invalid user teamspeak from 116.31.116.42 port 48921 ssh2
+Jan 15 15:22:14 ubuntu-server sshd[3547]: Invalid user ts3 from 116.31.116.42 port 48929
+Jan 15 15:22:16 ubuntu-server sshd[3547]: Failed password for invalid user ts3 from 116.31.116.42 port 48929 ssh2
+Jan 15 15:22:17 ubuntu-server sshd[3549]: Invalid user minecraft from 116.31.116.42 port 48937
+Jan 15 15:22:19 ubuntu-server sshd[3549]: Failed password for invalid user minecraft from 116.31.116.42 port 48937 ssh2
+Jan 15 15:45:33 ubuntu-server sshd[3401]: pam_unix(sshd:session): session closed for user admin
+Jan 15 16:00:01 ubuntu-server CRON[3601]: pam_unix(cron:session): session opened for user root by (uid=0)
+Jan 15 16:00:01 ubuntu-server CRON[3601]: pam_unix(cron:session): session closed for user root
+Jan 15 16:12:44 ubuntu-server sshd[3645]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=61.177.172.140 user=root
+Jan 15 16:12:46 ubuntu-server sshd[3645]: Failed password for root from 61.177.172.140 port 39821 ssh2
+Jan 15 16:12:47 ubuntu-server sshd[3647]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=61.177.172.140 user=root
+Jan 15 16:12:49 ubuntu-server sshd[3647]: Failed password for root from 61.177.172.140 port 39829 ssh2
+Jan 15 16:12:50 ubuntu-server sshd[3649]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=61.177.172.140 user=root
+Jan 15 16:12:52 ubuntu-server sshd[3649]: Failed password for root from 61.177.172.140 port 39837 ssh2
+Jan 15 16:12:53 ubuntu-server sshd[3651]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=61.177.172.140 user=root
+Jan 15 16:12:55 ubuntu-server sshd[3651]: Failed password for root from 61.177.172.140 port 39845 ssh2
+Jan 15 16:12:56 ubuntu-server sshd[3653]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=61.177.172.140 user=root
+Jan 15 16:12:58 ubuntu-server sshd[3653]: Failed password for root from 61.177.172.140 port 39853 ssh2
+Jan 15 16:30:22 ubuntu-server sshd[3701]: Accepted password for developer from 192.168.1.100 port 55123 ssh2
+Jan 15 16:30:22 ubuntu-server sshd[3701]: pam_unix(sshd:session): session opened for user developer by (uid=0)
+Jan 15 17:00:01 ubuntu-server CRON[3801]: pam_unix(cron:session): session opened for user root by (uid=0)
+Jan 15 17:00:01 ubuntu-server CRON[3801]: pam_unix(cron:session): session closed for user root
+Jan 15 17:15:33 ubuntu-server sshd[3845]: Invalid user git from 185.156.73.54 port 42156
+Jan 15 17:15:33 ubuntu-server sshd[3845]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=185.156.73.54
+Jan 15 17:15:35 ubuntu-server sshd[3845]: Failed password for invalid user git from 185.156.73.54 port 42156 ssh2
+Jan 15 17:15:36 ubuntu-server sshd[3847]: Invalid user gitlab from 185.156.73.54 port 42164
+Jan 15 17:15:38 ubuntu-server sshd[3847]: Failed password for invalid user gitlab from 185.156.73.54 port 42164 ssh2
+Jan 15 17:15:39 ubuntu-server sshd[3849]: Invalid user jenkins from 185.156.73.54 port 42172
+Jan 15 17:15:41 ubuntu-server sshd[3849]: Failed password for invalid user jenkins from 185.156.73.54 port 42172 ssh2
+Jan 15 17:15:42 ubuntu-server sshd[3851]: Invalid user hudson from 185.156.73.54 port 42180
+Jan 15 17:15:44 ubuntu-server sshd[3851]: Failed password for invalid user hudson from 185.156.73.54 port 42180 ssh2
+Jan 15 17:15:45 ubuntu-server sshd[3853]: Invalid user bamboo from 185.156.73.54 port 42188
+Jan 15 17:15:47 ubuntu-server sshd[3853]: Failed password for invalid user bamboo from 185.156.73.54 port 42188 ssh2
+Jan 15 17:45:12 ubuntu-server sshd[3701]: pam_unix(sshd:session): session closed for user developer
+Jan 15 18:00:01 ubuntu-server CRON[3901]: pam_unix(cron:session): session opened for user root by (uid=0)
+Jan 15 18:00:01 ubuntu-server CRON[3901]: pam_unix(cron:session): session closed for user root
+Jan 15 18:22:33 ubuntu-server sshd[3945]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=122.194.229.59 user=root
+Jan 15 18:22:35 ubuntu-server sshd[3945]: Failed password for root from 122.194.229.59 port 51234 ssh2
+Jan 15 18:22:36 ubuntu-server sshd[3947]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=122.194.229.59 user=root
+Jan 15 18:22:38 ubuntu-server sshd[3947]: Failed password for root from 122.194.229.59 port 51242 ssh2
+Jan 15 18:22:39 ubuntu-server sshd[3949]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=122.194.229.59 user=root
+Jan 15 18:22:41 ubuntu-server sshd[3949]: Failed password for root from 122.194.229.59 port 51250 ssh2
+Jan 15 18:22:42 ubuntu-server sshd[3951]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=122.194.229.59 user=root
+Jan 15 18:22:44 ubuntu-server sshd[3951]: Failed password for root from 122.194.229.59 port 51258 ssh2
+Jan 15 18:22:45 ubuntu-server sshd[3953]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=122.194.229.59 user=root
+Jan 15 18:22:47 ubuntu-server sshd[3953]: Failed password for root from 122.194.229.59 port 51266 ssh2
+Jan 15 18:22:48 ubuntu-server sshd[3955]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=122.194.229.59 user=root
+Jan 15 18:22:50 ubuntu-server sshd[3955]: Failed password for root from 122.194.229.59 port 51274 ssh2
+Jan 15 18:22:51 ubuntu-server sshd[3957]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=122.194.229.59 user=root
+Jan 15 18:22:53 ubuntu-server sshd[3957]: Failed password for root from 122.194.229.59 port 51282 ssh2
+Jan 15 18:22:54 ubuntu-server sshd[3959]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=122.194.229.59 user=root
+Jan 15 18:22:56 ubuntu-server sshd[3959]: Failed password for root from 122.194.229.59 port 51290 ssh2
+Jan 15 19:00:01 ubuntu-server CRON[4001]: pam_unix(cron:session): session opened for user root by (uid=0)
+Jan 15 19:00:01 ubuntu-server CRON[4001]: pam_unix(cron:session): session closed for user root
+Jan 15 19:15:22 ubuntu-server sshd[4045]: Accepted publickey for backup from 10.0.0.30 port 48921 ssh2: RSA SHA256:Ql8Qp5WKdYNJLvJTfPfVxi9X2E4KEi4RZ5KqPV0udHs
+Jan 15 19:15:22 ubuntu-server sshd[4045]: pam_unix(sshd:session): session opened for user backup by (uid=0)
+Jan 15 19:30:11 ubuntu-server sshd[4045]: pam_unix(sshd:session): session closed for user backup
+Jan 15 20:00:01 ubuntu-server CRON[4101]: pam_unix(cron:session): session opened for user root by (uid=0)
+Jan 15 20:00:01 ubuntu-server CRON[4101]: pam_unix(cron:session): session closed for user root
+Jan 15 20:12:33 ubuntu-server sshd[4145]: Invalid user vnc from 198.98.51.189 port 55234
+Jan 15 20:12:33 ubuntu-server sshd[4145]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=198.98.51.189
+Jan 15 20:12:35 ubuntu-server sshd[4145]: Failed password for invalid user vnc from 198.98.51.189 port 55234 ssh2
+Jan 15 20:12:36 ubuntu-server sshd[4147]: Invalid user testuser from 198.98.51.189 port 55242
+Jan 15 20:12:38 ubuntu-server sshd[4147]: Failed password for invalid user testuser from 198.98.51.189 port 55242 ssh2
+Jan 15 20:12:39 ubuntu-server sshd[4149]: Invalid user student from 198.98.51.189 port 55250
+Jan 15 20:12:41 ubuntu-server sshd[4149]: Failed password for invalid user student from 198.98.51.189 port 55250 ssh2
+Jan 15 21:00:01 ubuntu-server CRON[4201]: pam_unix(cron:session): session opened for user root by (uid=0)
+Jan 15 21:00:01 ubuntu-server CRON[4201]: pam_unix(cron:session): session closed for user root
+Jan 15 21:22:11 ubuntu-server sshd[4245]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=175.107.0.73 user=root
+Jan 15 21:22:13 ubuntu-server sshd[4245]: Failed password for root from 175.107.0.73 port 48123 ssh2
+Jan 15 21:22:14 ubuntu-server sshd[4247]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=175.107.0.73 user=root
+Jan 15 21:22:16 ubuntu-server sshd[4247]: Failed password for root from 175.107.0.73 port 48131 ssh2
+Jan 15 21:22:17 ubuntu-server sshd[4249]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=175.107.0.73 user=root
+Jan 15 21:22:19 ubuntu-server sshd[4249]: Failed password for root from 175.107.0.73 port 48139 ssh2
+Jan 15 22:00:01 ubuntu-server CRON[4301]: pam_unix(cron:session): session opened for user root by (uid=0)
+Jan 15 22:00:01 ubuntu-server CRON[4301]: pam_unix(cron:session): session closed for user root
+Jan 15 22:15:44 ubuntu-server sshd[4345]: Accepted password for admin from 192.168.1.55 port 52341 ssh2
+Jan 15 22:15:44 ubuntu-server sshd[4345]: pam_unix(sshd:session): session opened for user admin by (uid=0)
+Jan 15 22:30:22 ubuntu-server sudo:    admin : TTY=pts/0 ; PWD=/home/admin ; USER=root ; COMMAND=/usr/bin/systemctl restart nginx
+Jan 15 22:30:22 ubuntu-server sudo: pam_unix(sudo:session): session opened for user root by admin(uid=0)
+Jan 15 22:30:23 ubuntu-server sudo: pam_unix(sudo:session): session closed for user root
+Jan 15 22:45:11 ubuntu-server sshd[4345]: pam_unix(sshd:session): session closed for user admin
+Jan 15 23:00:01 ubuntu-server CRON[4401]: pam_unix(cron:session): session opened for user root by (uid=0)
+Jan 15 23:00:01 ubuntu-server CRON[4401]: pam_unix(cron:session): session closed for user root
+Jan 15 23:12:33 ubuntu-server sshd[4445]: Invalid user deploy from 89.248.165.52 port 41234
+Jan 15 23:12:33 ubuntu-server sshd[4445]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=89.248.165.52
+Jan 15 23:12:35 ubuntu-server sshd[4445]: Failed password for invalid user deploy from 89.248.165.52 port 41234 ssh2
+Jan 15 23:12:36 ubuntu-server sshd[4447]: Invalid user deployer from 89.248.165.52 port 41242
+Jan 15 23:12:38 ubuntu-server sshd[4447]: Failed password for invalid user deployer from 89.248.165.52 port 41242 ssh2
+Jan 15 23:12:39 ubuntu-server sshd[4449]: Invalid user ansible from 89.248.165.52 port 41250
+Jan 15 23:12:41 ubuntu-server sshd[4449]: Failed password for invalid user ansible from 89.248.165.52 port 41250 ssh2
+Jan 15 23:12:42 ubuntu-server sshd[4451]: Invalid user puppet from 89.248.165.52 port 41258
+Jan 15 23:12:44 ubuntu-server sshd[4451]: Failed password for invalid user puppet from 89.248.165.52 port 41258 ssh2
+Jan 15 23:12:45 ubuntu-server sshd[4453]: Invalid user chef from 89.248.165.52 port 41266
+Jan 15 23:12:47 ubuntu-server sshd[4453]: Failed password for invalid user chef from 89.248.165.52 port 41266 ssh2
+Jan 15 23:30:22 ubuntu-server sshd[4501]: Connection closed by 45.141.84.57 port 51234 [preauth]
+Jan 15 23:45:11 ubuntu-server sshd[4512]: Connection closed by 92.118.160.1 port 48921 [preauth]
+Jan 16 00:00:01 ubuntu-server CRON[4601]: pam_unix(cron:session): session opened for user root by (uid=0)
+Jan 16 00:00:01 ubuntu-server CRON[4601]: pam_unix(cron:session): session closed for user root
+Jan 16 00:15:22 ubuntu-server sshd[4645]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=218.92.0.107 user=root
+Jan 16 00:15:24 ubuntu-server sshd[4645]: Failed password for root from 218.92.0.107 port 55123 ssh2
+Jan 16 00:15:25 ubuntu-server sshd[4647]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=218.92.0.107 user=root
+Jan 16 00:15:27 ubuntu-server sshd[4647]: Failed password for root from 218.92.0.107 port 55131 ssh2
+Jan 16 00:15:28 ubuntu-server sshd[4649]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=218.92.0.107 user=root
+Jan 16 00:15:30 ubuntu-server sshd[4649]: Failed password for root from 218.92.0.107 port 55139 ssh2
+Jan 16 00:15:31 ubuntu-server sshd[4651]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=218.92.0.107 user=root
+Jan 16 00:15:33 ubuntu-server sshd[4651]: Failed password for root from 218.92.0.107 port 55147 ssh2
+Jan 16 01:00:01 ubuntu-server CRON[4701]: pam_unix(cron:session): session opened for user root by (uid=0)
+Jan 16 01:00:01 ubuntu-server CRON[4701]: pam_unix(cron:session): session closed for user root
+Jan 16 01:22:44 ubuntu-server sshd[4745]: Invalid user info from 141.98.10.56 port 38291
+Jan 16 01:22:44 ubuntu-server sshd[4745]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=141.98.10.56
+Jan 16 01:22:46 ubuntu-server sshd[4745]: Failed password for invalid user info from 141.98.10.56 port 38291 ssh2
+Jan 16 01:22:47 ubuntu-server sshd[4747]: Invalid user sales from 141.98.10.56 port 38299
+Jan 16 01:22:49 ubuntu-server sshd[4747]: Failed password for invalid user sales from 141.98.10.56 port 38299 ssh2
+Jan 16 01:22:50 ubuntu-server sshd[4749]: Invalid user marketing from 141.98.10.56 port 38307
+Jan 16 01:22:52 ubuntu-server sshd[4749]: Failed password for invalid user marketing from 141.98.10.56 port 38307 ssh2
+Jan 16 02:00:01 ubuntu-server CRON[4801]: pam_unix(cron:session): session opened for user root by (uid=0)
+Jan 16 02:00:01 ubuntu-server CRON[4801]: pam_unix(cron:session): session closed for user root
+Jan 16 02:30:33 ubuntu-server sshd[4845]: Invalid user demo from 193.56.28.103 port 42341
+Jan 16 02:30:33 ubuntu-server sshd[4845]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=193.56.28.103
+Jan 16 02:30:35 ubuntu-server sshd[4845]: Failed password for invalid user demo from 193.56.28.103 port 42341 ssh2
+Jan 16 03:00:01 ubuntu-server CRON[4901]: pam_unix(cron:session): session opened for user root by (uid=0)
+Jan 16 03:00:01 ubuntu-server CRON[4901]: pam_unix(cron:session): session closed for user root
+Jan 16 03:42:15 ubuntu-server sshd[4945]: Accepted password for admin from 192.168.1.200 port 51234 ssh2
+Jan 16 03:42:15 ubuntu-server sshd[4945]: pam_unix(sshd:session): session opened for user admin by (uid=0)
+Jan 16 03:42:45 ubuntu-server sudo:    admin : TTY=pts/0 ; PWD=/home/admin ; USER=root ; COMMAND=/usr/bin/cat /etc/shadow
+Jan 16 03:42:45 ubuntu-server sudo: pam_unix(sudo:session): session opened for user root by admin(uid=0)
+Jan 16 03:42:46 ubuntu-server sudo: pam_unix(sudo:session): session closed for user root
+Jan 16 03:43:22 ubuntu-server sudo:    admin : TTY=pts/0 ; PWD=/home/admin ; USER=root ; COMMAND=/usr/bin/useradd -m backdoor
+Jan 16 03:43:22 ubuntu-server sudo: pam_unix(sudo:session): session opened for user root by admin(uid=0)
+Jan 16 03:43:23 ubuntu-server sudo: pam_unix(sudo:session): session closed for user root
+Jan 16 03:44:01 ubuntu-server sshd[4945]: pam_unix(sshd:session): session closed for user admin
+Jan 16 04:00:01 ubuntu-server CRON[5001]: pam_unix(cron:session): session opened for user root by (uid=0)
+Jan 16 04:00:01 ubuntu-server CRON[5001]: pam_unix(cron:session): session closed for user root
+Jan 16 04:15:22 ubuntu-server sshd[5045]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=59.63.188.3 user=root
+Jan 16 04:15:24 ubuntu-server sshd[5045]: Failed password for root from 59.63.188.3 port 48921 ssh2
+Jan 16 04:15:25 ubuntu-server sshd[5047]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=59.63.188.3 user=root
+Jan 16 04:15:27 ubuntu-server sshd[5047]: Failed password for root from 59.63.188.3 port 48929 ssh2
+Jan 16 04:15:28 ubuntu-server sshd[5049]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=59.63.188.3 user=root
+Jan 16 04:15:30 ubuntu-server sshd[5049]: Failed password for root from 59.63.188.3 port 48937 ssh2
+Jan 16 04:15:31 ubuntu-server sshd[5051]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=59.63.188.3 user=root
+Jan 16 04:15:33 ubuntu-server sshd[5051]: Failed password for root from 59.63.188.3 port 48945 ssh2
+Jan 16 04:15:34 ubuntu-server sshd[5053]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=59.63.188.3 user=root
+Jan 16 04:15:36 ubuntu-server sshd[5053]: Failed password for root from 59.63.188.3 port 48953 ssh2
+Jan 16 04:15:37 ubuntu-server sshd[5055]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=59.63.188.3 user=root
+Jan 16 04:15:39 ubuntu-server sshd[5055]: Failed password for root from 59.63.188.3 port 48961 ssh2
+Jan 16 04:15:40 ubuntu-server sshd[5057]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=59.63.188.3 user=root
+Jan 16 04:15:42 ubuntu-server sshd[5057]: Failed password for root from 59.63.188.3 port 48969 ssh2
+Jan 16 04:15:43 ubuntu-server sshd[5059]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=59.63.188.3 user=root
+Jan 16 04:15:45 ubuntu-server sshd[5059]: Failed password for root from 59.63.188.3 port 48977 ssh2
+Jan 16 04:15:46 ubuntu-server sshd[5061]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=59.63.188.3 user=root
+Jan 16 04:15:48 ubuntu-server sshd[5061]: Failed password for root from 59.63.188.3 port 48985 ssh2
+Jan 16 04:15:49 ubuntu-server sshd[5063]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=59.63.188.3 user=root
+Jan 16 04:15:51 ubuntu-server sshd[5063]: Failed password for root from 59.63.188.3 port 48993 ssh2
+Jan 16 05:00:01 ubuntu-server CRON[5101]: pam_unix(cron:session): session opened for user root by (uid=0)
+Jan 16 05:00:01 ubuntu-server CRON[5101]: pam_unix(cron:session): session closed for user root
+Jan 16 05:30:22 ubuntu-server sshd[5145]: Accepted publickey for deploy from 10.0.0.25 port 52341 ssh2: RSA SHA256:W6BAkPVLrDhkPvBMTkLlSWBOKpJ1lVxNEw8RqkBXrAE
+Jan 16 05:30:22 ubuntu-server sshd[5145]: pam_unix(sshd:session): session opened for user deploy by (uid=0)
+Jan 16 05:45:33 ubuntu-server sshd[5145]: pam_unix(sshd:session): session closed for user deploy
+Jan 16 06:00:01 ubuntu-server CRON[5201]: pam_unix(cron:session): session opened for user root by (uid=0)
+Jan 16 06:00:01 ubuntu-server CRON[5201]: pam_unix(cron:session): session closed for user root
